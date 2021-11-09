@@ -3,11 +3,15 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <label>Введите имя:</label>
-    <input [(ngModel)]="name" placeholder="name" />
-    <h1>Добро пожаловать {{ name }}!</h1>
+  <child-comp
+  [userName]="name"
+  [userAge]="age"
+  ></child-comp>
+  <input type="text" [(ngModel)]="name"><br/>
+  <input type="number" [(ngModel)]="age" />
   `,
 })
 export class AppComponent {
-  name = ''
+  name: string = "Том"
+  age: number = 24
 }
